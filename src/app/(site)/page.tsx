@@ -57,15 +57,15 @@ const personas = [
 const ctaButtons = [
   {
     label: "学校向け導入相談",
-    href: "/contact?type=school",
+    type: "school",
   },
   {
     label: "個人利用を申し込む",
-    href: "/contact?type=individual",
+    type: "individual",
   },
   {
     label: "スポンサー連携を相談",
-    href: "/contact?type=sponsor",
+    type: "sponsor",
   },
 ];
 
@@ -205,7 +205,10 @@ export default function HomePage() {
             {ctaButtons.map((cta) => (
               <Link
                 key={cta.label}
-                href={cta.href}
+                href={{
+                  pathname: "/contact",
+                  query: { type: cta.type },
+                }}
                 className="rounded-full border border-primary/40 bg-primary/20 px-6 py-3 text-sm font-semibold text-primary-light transition hover:border-primary hover:bg-primary/30 hover:text-white"
               >
                 {cta.label}
