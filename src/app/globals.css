@@ -27,8 +27,7 @@ a {
 }
 
 .gradient-bg {
-  background:
-    radial-gradient(
+  background: radial-gradient(
       circle at top left,
       rgba(96, 165, 250, 0.25),
       transparent 45%
