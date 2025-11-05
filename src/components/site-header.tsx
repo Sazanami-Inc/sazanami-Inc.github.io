@@ -9,7 +9,7 @@ const navigation = [
   { name: "会社情報", href: "/company" },
   { name: "ポリシー", href: "/policies" },
   { name: "お問い合わせ", href: "/contact" },
-];
+] as const;
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
