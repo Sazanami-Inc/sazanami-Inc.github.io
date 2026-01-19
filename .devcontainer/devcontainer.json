@@ -1,0 +1,28 @@
+{
+    "name": "sazanami-inc-corporate-site",
+    "runArgs": ["--name=sazanami-inc-corporate-site"],
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
+    "shutdownAction": "stopContainer",
+    "remoteUser": "vscode",
+    "features": {
+		"ghcr.io/jsburckhardt/devcontainer-features/codex:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "lts",
+            "pnpmVersion": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+            },
+            "extensions": [
+                "mhutchie.git-graph",
+                "github.vscode-pull-request-github",
+                "streetsidesoftware.code-spell-checker",
+                "openai.chatgpt",
+
+                "ms-vscode.vscode-typescript-next"
+            ]
+        }
+    }
+}
