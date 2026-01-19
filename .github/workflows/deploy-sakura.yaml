@@ -45,12 +45,12 @@ jobs:
       - name: Build
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-      - name: Deploy via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      - name: Deploy via SCP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.SAKURA_HOST }}
+          host: ${{ secrets.SAKURA_HOST }}
           username: ${{ secrets.SAKURA_USERNAME }}
-          ssh_private_key: ${{ secrets.SAKURA_SSH_PRIVATE_KEY }}
-          local_path: ./out/*
-          remote_path: ${{ secrets.SAKURA_REMOTE_PATH }}
-          sftpArgs: "-o StrictHostKeyChecking=no"
+          key: ${{ secrets.SAKURA_SSH_PRIVATE_KEY }}
+          source: "out/*"
+          target: ${{ secrets.SAKURA_REMOTE_PATH }}
+          strip_components: 1
